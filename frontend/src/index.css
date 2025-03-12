@@ -1,0 +1,68 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-gradient-to-br from-xhs-light-pink to-white min-h-screen;
+  }
+}
+
+/* 赛博朋克风格的自定义样式 */
+@layer components {
+  .cyberpunk-glitch {
+    text-shadow: 2px 2px #ff00ff, -2px -2px #00ffff;
+    animation: glitch 1s infinite;
+  }
+
+  .cyberpunk-border {
+    border: 2px solid transparent;
+    background: linear-gradient(45deg, #ff00ff, #00ffff);
+    background-clip: padding-box;
+  }
+
+  .cyberpunk-glow {
+    box-shadow: 0 0 10px #00ffff, 0 0 20px #ff00ff;
+  }
+
+  .pixel-border {
+    @apply border-2 border-xhs-black shadow-[4px_4px_0_0_rgba(0,0,0,1)];
+  }
+
+  .pixel-button {
+    @apply px-4 py-2 bg-xhs-pink text-white font-pixel text-sm 
+           pixel-border hover:translate-x-[2px] hover:translate-y-[2px] 
+           hover:shadow-[2px_2px_0_0_rgba(0,0,0,1)] 
+           transition-all duration-100 cursor-pointer;
+  }
+
+  .pixel-card {
+    @apply bg-white p-6 pixel-border hover:translate-x-[2px] 
+           hover:translate-y-[2px] hover:shadow-[2px_2px_0_0_rgba(0,0,0,1)] 
+           transition-all duration-100;
+  }
+
+  .pixel-input {
+    @apply w-full px-4 py-2 bg-white pixel-border focus:outline-none 
+           focus:border-xhs-pink focus:ring-1 focus:ring-xhs-pink;
+  }
+}
+
+@keyframes glitch {
+  0% {
+    text-shadow: 2px 2px #ff00ff, -2px -2px #00ffff;
+  }
+  25% {
+    text-shadow: -2px 2px #ff00ff, 2px -2px #00ffff;
+  }
+  50% {
+    text-shadow: 2px -2px #ff00ff, -2px 2px #00ffff;
+  }
+  75% {
+    text-shadow: -2px -2px #ff00ff, 2px 2px #00ffff;
+  }
+  100% {
+    text-shadow: 2px 2px #ff00ff, -2px -2px #00ffff;
+  }
+}
